@@ -1,0 +1,70 @@
+name: Update Profile Cards
+
+on:
+  schedule:
+    # Run daily at 3 AM UTC
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      # --- GitHub Stats Card ---
+      - name: Generate GitHub Stats card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&theme=dark&hide_border=false&include_all_commits=false&count_private=false
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --- Top Languages Card ---
+      - name: Generate Top Languages card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --- Streak Stats Card ---
+      - name: Generate Streak Stats card
+        uses: muhammad-fiaz/github-readme-streak-stats@v1.0.1
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          THEME: dark
+          OUTPUT_PATH: profile/streak.svg
+
+      # --- GitHub Trophies Card ---
+      - name: Generate Trophy card
+        uses: soulteary/github-profile-trophy-action@v1.0.0
+        with:
+          options: username=${{ github.repository_owner }}&theme=dark&no-frame=false&no-bg=true&margin-w=4
+          path: profile/trophy.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --- Top Contributed Repos Card (custom) ---
+      - name: Generate Top Contributed Repos card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/generate-contributor-stats.js "${{ github.repository_owner }}" 5 profile/contributor-stats.svg
+
+      # --- Commit and push all generated SVGs ---
+      - name: Commit and push SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "Update profile cards" || echo "No changes to commit"
+          git push
