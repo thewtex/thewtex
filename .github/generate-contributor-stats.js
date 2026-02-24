@@ -96,7 +96,16 @@ function queryUserCreatedAt(login) {
         res.on("end", () => {
           try {
             const parsed = JSON.parse(data);
-            resolve(parsed.data.user.createdAt);
+            if (parsed.errors) {
+              reject(new Error(JSON.stringify(parsed.errors)));
+              return;
+            }
+            const createdAt = parsed.data && parsed.data.user && parsed.data.user.createdAt;
+            if (!createdAt) {
+              reject(new Error("GitHub GraphQL: user.createdAt not found in response"));
+              return;
+            }
+            resolve(createdAt);
           } catch (e) {
             reject(e);
           }
