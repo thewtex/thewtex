@@ -41,14 +41,11 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # --- Streak Stats Card ---
+      # --- Streak Stats Card (custom, all-time contributions) ---
       - name: Generate Streak Stats card
-        uses: muhammad-fiaz/github-readme-streak-stats@4a189450bbd0e143b9ed0f649500d1bc7b8c34f1 # v1.0.1
-        with:
-          USERNAME: ${{ github.repository_owner }}
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          THEME: dark
-          OUTPUT_PATH: profile/streak.svg
+        run: node .github/generate-streak-stats.js "${{ github.repository_owner }}" profile/streak.svg
 
       # --- GitHub Trophies Card ---
       - name: Generate Trophy card
