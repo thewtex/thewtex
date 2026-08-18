@@ -8,8 +8,8 @@
         role="img"
         aria-labelledby="descId"
       >
-        <title id="titleId">Matt McCormick's GitHub Stats, Rank: A+</title>
-        <desc id="descId">Total Stars Earned: 1893, Total Commits  (last year) : 12819, Total PRs: 5586, Total Issues: 1166, Contributed to (last year): 92</desc>
+        <title id="titleId">Matt McCormick&#39;s GitHub Stats, Rank: A+</title>
+        <desc id="descId">Total Stars Earned: 1893, Total Commits  (last year) : 12824, Total PRs: 5587, Total Issues: 1166, Contributed to (last year): 92</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -126,7 +126,7 @@
         y="0"
         class="header"
         data-testid="header"
-      >Matt McCormick's GitHub Stats</text>
+      >Matt McCormick&#39;s GitHub Stats</text>
     </g>
       </g>
     
@@ -155,7 +155,7 @@
       <text class="stat  bold"  y="12.5">Total Stars Earned:</text>
       <text
         class="stat  bold"
-        x="199.01"
+        x="204.01"
         y="12.5"
         data-testid="stars"
       >1.9k</text>
@@ -166,7 +166,7 @@
       <text class="stat  bold"  y="12.5">Total Commits (last year):</text>
       <text
         class="stat  bold"
-        x="199.01"
+        x="204.01"
         y="12.5"
         data-testid="commits"
       >12.8k</text>
@@ -177,7 +177,7 @@
       <text class="stat  bold"  y="12.5">Total PRs:</text>
       <text
         class="stat  bold"
-        x="199.01"
+        x="204.01"
         y="12.5"
         data-testid="prs"
       >5.6k</text>
@@ -188,7 +188,7 @@
       <text class="stat  bold"  y="12.5">Total Issues:</text>
       <text
         class="stat  bold"
-        x="199.01"
+        x="204.01"
         y="12.5"
         data-testid="issues"
       >1.2k</text>
@@ -199,7 +199,7 @@
       <text class="stat  bold"  y="12.5">Contributed to (last year):</text>
       <text
         class="stat  bold"
-        x="199.01"
+        x="204.01"
         y="12.5"
         data-testid="contribs"
       >92</text>
