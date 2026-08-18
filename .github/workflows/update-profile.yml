@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -25,7 +25,7 @@ jobs:
 
       # --- GitHub Stats Card ---
       - name: Generate GitHub Stats card
-        uses: readme-tools/github-readme-stats-action@b4d2ef3b8051484b318d455163153b23a2b35fa2 # v1
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2.0.2
         with:
           card: stats
           options: username=${{ github.repository_owner }}&theme=dark&hide_border=false&include_all_commits=false&count_private=false
@@ -36,7 +36,7 @@ jobs:
 
       # --- Top Languages Card ---
       - name: Generate Top Languages card
-        uses: readme-tools/github-readme-stats-action@b4d2ef3b8051484b318d455163153b23a2b35fa2 # v1
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2.0.2
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact
