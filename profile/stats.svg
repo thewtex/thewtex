@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Matt McCormick&#39;s GitHub Stats, Rank: A+</title>
-        <desc id="descId">Total Stars Earned: 1893, Total Commits  (last year) : 12957, Total PRs: 5590, Total Issues: 1166, Contributed to (last year): 92</desc>
+        <desc id="descId">Total Stars Earned: 1893, Total Commits  (last year) : 12986, Total PRs: 5594, Total Issues: 1167, Contributed to (last year): 92</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
