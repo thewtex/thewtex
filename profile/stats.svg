@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Matt McCormick&#39;s GitHub Stats, Rank: A+</title>
-        <desc id="descId">Total Stars Earned: 1896, Total Commits  (last year) : 13862, Total PRs: 5610, Total Issues: 1178, Contributed to (last year): 91</desc>
+        <desc id="descId">Total Stars Earned: 1897, Total Commits  (last year) : 13889, Total PRs: 5610, Total Issues: 1178, Contributed to (last year): 91</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 2.603891206926114;
+        stroke-dashoffset: 2.6037605523169676;
       }
     }
   
